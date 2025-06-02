@@ -1,0 +1,46 @@
+name: dreamgaussian
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+
+dependencies:
+  # — Conda-installable packages —
+  - python=3.10
+  - pytorch=1.12.1
+  - torchvision=0.13.1
+  - torchaudio=0.12.1
+  - cudatoolkit=11.6
+  - mkl=2024.0  
+  - ffmpeg
+  - cmake
+  - ninja
+
+  # Use pip for the remaining Python-only libs
+  - pip
+  - pip:
+      - tqdm
+      - rich
+      - numpy
+      - pandas
+      - scipy
+      - scikit-learn
+      - matplotlib
+      - opencv-python
+      - imageio
+      - imageio-ffmpeg
+      - omegaconf
+      - einops
+      - plyfile
+      - pygltflib
+      - dearpygui
+      - huggingface_hub
+      - diffusers
+      - accelerate
+      - transformers
+      - xatlas
+      - trimesh
+      - PyMCubes
+      - pymeshlab
+      - rembg[gpu,cli]
+      - gradio

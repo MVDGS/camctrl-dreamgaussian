@@ -1,0 +1,26 @@
+{
+  "original_width": 720,
+  "original_height": 1280,
+  "output_size": 256,
+  "border_ratio": 0.2,
+  "recenter": true,
+  "bbox": {
+    "x_min": 343,
+    "x_max": 1279,
+    "y_min": 110,
+    "y_max": 567
+  },
+  "object_size": {
+    "width": 457,
+    "height": 936
+  },
+  "scale_factor": 0.21794871794871795,
+  "final_object_size": {
+    "width": 99,
+    "height": 204
+  },
+  "placement_offset": {
+    "x": 78,
+    "y": 26
+  }
+}

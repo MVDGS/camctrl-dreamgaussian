@@ -1,0 +1,41 @@
+# Git 저장소 메타데이터
+.git
+.gitignore
+.gitmodules
+
+# Python 컴파일 아티팩트
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter 노트북 체크포인트
+.ipynb_checkpoints/
+
+# Conda/virtualenv 환경 디렉터리
+env/
+.venv/
+.conda/
+*.conda/
+
+# 로그 및 출력물
+logs/
+output/
+tmp/
+*.log
+
+# 학습 데이터, 모델 가중치
+data/
+datasets/
+models/
+
+# 빌드 디렉터리
+build/
+dist/
+
+# IDE 설정
+.vscode/
+.idea/
+
+# 시스템 파일
+.DS_Store
+Thumbs.db

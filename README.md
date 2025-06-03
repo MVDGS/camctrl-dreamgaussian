@@ -55,6 +55,9 @@ camctrl-dreamgaussian/
 ├── configs/  # Configuration files
 │   ├── image_camctrl.yaml  # Dreamgaussian config
 │   └── svdxt_320_576_cameractrl.yaml  # CameraCtrl config
+├── utils/  # utility scripts
+│   ├── process.py  # Processing utilities
+│   └── process_camctrl.py  # CameraCtrl processing
 ├── src/  # Main source code directory
 │   ├── checkpoints/  # Model checkpoints
 │   ├── guidance/  # Guidance utilities
@@ -64,9 +67,7 @@ camctrl-dreamgaussian/
 │   ├── simple-knn/  # KNN implementation
 │   ├── scripts/  # Utility scripts
 │   ├── main.py  # Main training script
-│   ├── main2.py  # mesh & 2D albedo map training script
-│   ├── process.py  # Processing utilities
-│   └── process_camctrl.py  # CameraCtrl processing
+│   └── main2.py  # mesh & 2D albedo map training script
 ├── datasets/  # Dataset directory
 |   ├── cameractrl_assets/ 
 │   │   ├── pose_files  # generated pose files
@@ -78,12 +79,12 @@ camctrl-dreamgaussian/
 1. Prepare one condition image from CameraCtrl and one pose file (.txt) generated from generate_pose_file_from_COLMAP.py. Place the condition image in datasets/ and pose_file.txt in datasets/cameractrl_assets/pose_files/
 2. Run process.py:
   ```
-    python src/process.py datasets/condition_image.png
+    python utils/process.py datasets/condition_image.png
   ```
   - Original process.py for zero123
 
   ```
-    python src/process_camctrl.py datasets/condition_image.png
+    python utils/process_camctrl.py datasets/condition_image.png
   ```
   - Modified to maintain original image aspect ratio without square resizing
   - If the image ratio is not 720*1280 (typical phone camera), update cameractrl_image_width, cameractrl_image_height, cameractrl_original_pose_width, cameractrl_original_pose_height in src/configs/image_camctrl.yaml
@@ -91,9 +92,9 @@ camctrl-dreamgaussian/
 
 3. Run main.py:
   ```
-    python main.py --config src/configs/image_camctrl.yaml input=data/condition_image_rgba.png
+    python main.py --config configs/image_camctrl.yaml input=data/condition_image_rgba.png
   ```
 4. Run the original main2.py for mesh refinement:
   ```
-    python main2.py --config src/configs/image_camctrl.yaml input=data/condition_image_rgba.png
+    python main2.py --config configs/image_camctrl.yaml input=data/condition_image_rgba.png
   ```

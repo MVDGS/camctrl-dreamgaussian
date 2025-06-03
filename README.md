@@ -52,10 +52,10 @@ Inside `src/checkpoints/`, the following pre-trained models are required:
 ### Folder Structure
 ```
 camctrl-dreamgaussian/
+├── configs/  # Configuration files
+│   ├── image_camctrl.yaml  # Dreamgaussian config
+│   └── svdxt_320_576_cameractrl.yaml  # CameraCtrl config
 ├── src/  # Main source code directory
-│   ├── configs/  # Configuration files
-│   │   ├── image_camctrl.yaml  # Dreamgaussian config
-│   │   └── svdxt_320_576_cameractrl.yaml  # CameraCtrl config
 │   ├── checkpoints/  # Model checkpoints
 │   ├── guidance/  # Guidance utilities
 │   │   └── cameractrl_utils2.py
